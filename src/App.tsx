@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-const App: React.FC = () => {
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+
+/**
+ * The first thing to look at is a ----props interface!---- this is defined for each component you pass props to! 
+ * This delcares the shape of the object and the types associated with it 
+ * You must also declare an interface for the STATE of class components
+ */
+
+function MadeWithLove() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Typography variant="body1" color="textPrimary" align="center">
+      {'Built with love by the '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Things here thanks
+      </Link>
+      {' Brap.'}
+    </Typography>
+  );
+}
+
+const App: React.FC = () => {
+  return (    
+    <Container maxWidth="sm">
+    <Box my={4}>
+      <Typography variant="h4" component="h1" gutterBottom>
+        Create React App v4-beta example
+      </Typography>
+      
+      <MadeWithLove />
+    </Box>
+  </Container>
   );
 }
 
